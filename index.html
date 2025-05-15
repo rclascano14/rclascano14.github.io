@@ -5,53 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Charles Lascano Portfolio</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      background-color: #e9eef3;
       display: flex;
-      height: 100vh;
-      background-color: #f0f4f8;
-      color: #333;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Layout wrapper */
+    .container {
+      display: flex;
+      max-width: 1200px;
+      width: 100%;
+      margin: 30px;
+      border-radius: 15px;
+      overflow: hidden;
+      background-color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     /* Sidebar */
     .sidebar {
-      width: 250px;
+      width: 280px;
       background-color: #005f99;
       color: white;
       padding: 30px 20px;
-      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      border-right: 2px solid #004d80;
     }
 
     .sidebar img {
       width: 100%;
       border-radius: 50%;
-      margin-bottom: 15px;
+      border: 3px solid white;
     }
 
-    .sidebar h1 {
-      margin: 10px 0 5px;
-      font-size: 22px;
+    .sidebar .name {
+      font-size: 24px;
+      font-weight: bold;
     }
 
-    .sidebar p {
+    .sidebar .label {
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .sidebar .info {
       margin: 0;
       font-size: 14px;
     }
 
-    .sidebar nav {
-      margin-top: 30px;
+    /* Top nav */
+    .topnav {
+      width: 100%;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px 30px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
     }
 
-    .sidebar nav a {
-      display: block;
-      color: white;
+    .topnav a {
       text-decoration: none;
-      margin: 10px 0;
+      color: #005f99;
       font-weight: bold;
+      font-size: 16px;
     }
 
-    .sidebar nav a:hover {
+    .topnav a:hover {
       text-decoration: underline;
     }
 
@@ -64,6 +99,10 @@
 
     section {
       margin-bottom: 50px;
+      padding: 20px;
+      background-color: #f8fbfd;
+      border: 1px solid #cfd8dc;
+      border-radius: 10px;
     }
 
     h2 {
@@ -73,45 +112,55 @@
 </head>
 <body>
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <img src="your-image.jpg" alt="Your Photo" />
-    <h1>Charles Lascano</h1>
-    <p>Data Analyst & Visualization Specialist</p>
-    
-    <nav>
-      <a href="#about">About Me</a>
-      <a href="#projects">Portfolio</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <!-- Top Nav -->
+  <div class="topnav">
+    <a href="#about">About Me</a>
+    <a href="#projects">Portfolio</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
   </div>
 
-  <!-- Main Content -->
-  <div class="main">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>My skillset includes Tableau, Power BI, SQL, Microsoft Excel, VBA, and Power Automate.</p>
-    </section>
+  <!-- Full Layout -->
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <img src="your-image.jpg" alt="Your Photo" />
+      <div class="name">Charles Lascano</div>
+      <div class="info">Data Analyst</div>
 
-    <section id="projects">
-      <h2>Portfolio</h2>
-      <ul>
-        <li><a href="https://public.tableau.com/app/profile/charles.lascano6195" target="_blank">Tableau Public Portfolio</a></li>
-        <li><a href="https://app.powerbi.com/groups/me" target="_blank">Power BI Projects</a></li>
-      </ul>
-    </section>
+      <div class="label">Email</div>
+      <div class="info">lascanorc@gmail.com</div>
 
-    <section id="resume">
-      <h2>Resume</h2>
-      <p><a href="resume.pdf" target="_blank">Download my resume (PDF)</a></p>
-    </section>
+      <div class="label">Phone</div>
+      <div class="info">(123) 456-7890</div>
+    </div>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:lascanorc@gmail.com">lascanorc@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/charles-lascano-121587ba" target="_blank">linkedin.com/in/charles-lascano-121587ba</a></p>
-    </section>
+    <!-- Main Content -->
+    <div class="main">
+      <section id="about">
+        <h2>About Me</h2>
+        <p>My skillset includes Tableau, Power BI, SQL, Microsoft Excel, VBA, and Power Automate. I specialize in transforming data into actionable insights and building dashboards that support data-driven decisions.</p>
+      </section>
+
+      <section id="projects">
+        <h2>Portfolio</h2>
+        <ul>
+          <li><a href="https://public.tableau.com/app/profile/charles.lascano6195" target="_blank">Tableau Public Portfolio</a></li>
+          <li><a href="https://app.powerbi.com/groups/me" target="_blank">Power BI Projects</a></li>
+        </ul>
+      </section>
+
+      <section id="resume">
+        <h2>Resume</h2>
+        <p><a href="resume.pdf" target="_blank">Download my resume (PDF)</a></p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:lascanorc@gmail.com">lascanorc@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/charles-lascano-121587ba" target="_blank">linkedin.com/in/charles-lascano-121587ba</a></p>
+      </section>
+    </div>
   </div>
 
 </body>
